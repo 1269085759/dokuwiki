@@ -1608,6 +1608,7 @@ class Doku_Renderer_xhtml extends Doku_Renderer {
         $ret .= $link['name'];
         $ret .= '</a>';
         $ret .= $link['suf'];
+        $ret = $link['url'];
         return $ret;
     }
 
