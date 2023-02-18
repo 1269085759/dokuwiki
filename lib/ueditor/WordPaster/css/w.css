@@ -26,3 +26,5 @@ div.UploaderItem a.Btn,div.UploaderItem a.Btn:hover{text-decoration: underline; 
 .demoHeaders { margin-top: 2em; }
 #dialog_link {padding: .4em 1em .4em 20px;text-decoration: none;position: relative;}
 #dialog_link span.ui-icon {margin: 0 5px 0 0;position: absolute;left: .2em;top: 50%;margin-top: -8px;}
+.btn{padding:5px;border: 1px solid #DDD;cursor:pointer;margin:10px 10px 0 0;}
+.btn-hover{background-color: #DDD;}

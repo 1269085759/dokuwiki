@@ -810,12 +810,12 @@ function form_wikitext($attrs) {
     // mandatory attributes
     unset($attrs['name']);
     unset($attrs['id']);
-    return '<textarea name="wikitext" id="container" '
+    return '<div id="wordpaster-container"></div><textarea name="wikitext" id="container" '
                  .' style="height: 450px" type="text/plain"'
                  .$attrs['_text']
                  .'</textarea>'
                  .'<script type="text/javascript">
-                 WordPaster.getInstance({}).Load();
+                 WordPaster.getInstance({ui:{render:"wordpaster-container"}});
                  var ue = UE.getEditor("container")
                  ue.ready(function (){ue.addshortcutkey({"wordpaster": "ctrl+86"});});
                  </script>';
