@@ -1,16 +1,15 @@
 <?php
-ob_start();
 //201201/10
 $timeDir = date("Ym")."/".date("d");
 //data/media/
 $webRoot = str_replace("\\","/",dirname(__FILE__));
 $webRoot = str_replace("lib/ueditor/WordPaster","",$webRoot);
-$pathSvr = $webRoot.'/uploadfile/'.$timeDir;
+$pathSvr = $webRoot.'/lib/ueditor/php/upload/'.$timeDir;
 //http://www.qq.com/upload.php
 $urlRoot = "http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
 $urlRoot = str_replace("lib/ueditor/WordPaster/upload.php","",$urlRoot);
 //相对路径 http://www.ncmem.com/upload/2012-1-10/
-$urlUpload = $urlRoot ."data/media/" . $timeDir . "/";
+$urlUpload = $urlRoot ."lib/ueditor/php/upload/" . $timeDir . "/";
 
 //自动创建目录。upload/2012-1-10
 if(!is_dir($pathSvr))
@@ -38,11 +37,8 @@ if($ext == "jpg"
 	|| $ext == "bmp"
 	|| $ext == "webp")
 {
-	//年_月_日_时分秒毫秒.jpg
-	$saveFileName = $fileName;
-
 	//xxx/2011_05_05_091250000.jpg
-	$savePath = $uploadDir . "/" . $saveFileName;
+	$savePath = $pathSvr . "/" . $fileName;
 
 	//另存为新文件名称
 	if (!move_uploaded_file($tmpName,$savePath))
